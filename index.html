@@ -1,0 +1,428 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Solo Leveling | Arise</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #05050b;
+            color: white;
+        }
+
+        /* NAVBAR */
+
+        header {
+            height: 70px;
+            background: #090914;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 60px;
+            border-bottom: 1px solid #29295c;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #9d7cff;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #9d7cff;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 600px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            padding: 40px 20px;
+
+            background:
+                radial-gradient(circle at center,
+                rgba(70, 35, 140, 0.35),
+                rgba(0, 0, 0, 0.95) 70%);
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .system {
+            color: #8f7cff;
+            letter-spacing: 5px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 75px;
+            letter-spacing: 8px;
+
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #9d7cff,
+                #5e5ce6
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h2 {
+            margin-top: 10px;
+            font-size: 30px;
+            color: #aaaaff;
+        }
+
+        .hero p {
+            margin: 25px auto;
+            max-width: 650px;
+            color: #b8b8c9;
+            line-height: 1.7;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+
+            border: 1px solid #806cff;
+            color: white;
+            text-decoration: none;
+
+            background: #21164b;
+            box-shadow: 0 0 20px rgba(120, 90, 255, 0.3);
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #6b4cff;
+            box-shadow: 0 0 30px rgba(120, 90, 255, 0.7);
+        }
+
+        /* SYSTEM */
+
+        .section {
+            padding: 70px 50px;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 38px;
+            margin-bottom: 40px;
+            color: #9d8cff;
+        }
+
+        .cards {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 25px;
+        }
+
+        .card {
+            background: #0d0d1b;
+
+            padding: 30px;
+
+            border: 1px solid #29294d;
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #806cff;
+
+            box-shadow:
+                0 0 25px rgba(100, 70, 255, 0.25);
+        }
+
+        .card h3 {
+            color: #a895ff;
+            margin-bottom: 15px;
+            font-size: 23px;
+        }
+
+        .card p {
+            color: #9999ad;
+            line-height: 1.6;
+        }
+
+        /* STATUS */
+
+        .status {
+            max-width: 900px;
+            margin: auto;
+
+            background: #080812;
+
+            border: 1px solid #353560;
+
+            padding: 35px;
+
+            text-align: left;
+
+            box-shadow:
+                0 0 30px rgba(70, 50, 150, 0.2);
+        }
+
+        .status-title {
+            color: #8d78ff;
+            font-size: 22px;
+            margin-bottom: 25px;
+        }
+
+        .stat {
+            margin: 15px 0;
+            color: #c5c5d5;
+        }
+
+        .bar {
+            height: 8px;
+            background: #222238;
+            margin-top: 8px;
+        }
+
+        .bar span {
+            display: block;
+            height: 100%;
+            background: #7861ff;
+        }
+
+        .hp {
+            width: 90%;
+        }
+
+        .mana {
+            width: 75%;
+        }
+
+        .strength {
+            width: 95%;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #08080f;
+            color: #77778b;
+            border-top: 1px solid #22223d;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 0 20px;
+            }
+
+            nav a {
+                margin-left: 10px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero h2 {
+                font-size: 22px;
+            }
+
+            .section {
+                padding: 50px 20px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header>
+
+        <div class="logo">
+            SOLO LEVELING
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#system">System</a>
+            <a href="#status">Status</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="system">
+                SYSTEM ONLINE
+            </div>
+
+            <h1>ARISE</h1>
+
+            <h2>SUNG JINWOO</h2>
+
+            <p>
+                The weakest hunter was given a mysterious System
+                that allowed him to level up. Now he walks the path
+                from the weakest hunter to the Shadow Monarch.
+            </p>
+
+            <a href="#status" class="btn">
+                VIEW STATUS
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SYSTEM -->
+
+    <section class="section" id="system">
+
+        <h2>SYSTEM</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>LEVEL UP</h3>
+
+                <p>
+                    Complete quests, defeat enemies and increase
+                    your abilities beyond normal human limits.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <h3>SHADOW ARMY</h3>
+
+                <p>
+                    Raise defeated enemies as shadows and build
+                    an army under your command.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <h3>QUESTS</h3>
+
+                <p>
+                    Daily quests and special missions appear through
+                    the mysterious System.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <h3>ARISE</h3>
+
+                <p>
+                    The command that awakens fallen warriors
+                    and adds them to the Shadow Army.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATUS -->
+
+    <section class="section" id="status">
+
+        <h2>PLAYER STATUS</h2>
+
+        <div class="status">
+
+            <div class="status-title">
+                PLAYER: SUNG JINWOO
+            </div>
+
+            <div class="stat">
+                HP
+                <div class="bar">
+                    <span class="hp"></span>
+                </div>
+            </div>
+
+
+            <div class="stat">
+                MANA
+                <div class="bar">
+                    <span class="mana"></span>
+                </div>
+            </div>
+
+
+            <div class="stat">
+                STRENGTH
+                <div class="bar">
+                    <span class="strength"></span>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            Solo Leveling Fan Website | Built by Vishal
+        </p>
+
+    </footer>
+
+</body>
+</html>
+```
